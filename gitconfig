@@ -1,0 +1,53 @@
+[alias]
+    s = status
+    au = add -u
+	aa = add --all :/
+    c = commit
+	ci = commit -v
+	ca = commit --amend -v
+	save = commit -a -m "Save"
+	count = diff --stat "4b825dc642cb6eb9a060e54bf8d69288fbee4904" # hash of empty tree
+	update-submodules = submodule update --init --recursive
+	upgrade-submodules = submodule update --init --remote
+	empty-tree-hash = hash-object -t tree /dev/null
+	root = rev-parse --show-toplevel
+
+[init]
+	defaultBranch = main
+
+[diff]
+	mnemonicPrefix = true
+	wordRegex = "[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
+	compactionHeuristic = true
+
+[color]
+	ui = auto
+
+[color "grep"]
+	match = cyan bold
+	selected = blue
+	context = normal
+	filename = magenta
+	linenumber = green
+	separator = yellow
+	function = blue
+
+[pretty]
+	line = "%C(auto)%h %<|(60,trunc)%s %C(green)%ad%C(auto)%d"
+	detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ad%n %C(auto)%d%n"
+
+[push]
+    autoSetupRemote = true
+
+[grep]
+	lineNumber = true
+
+[advice]
+	detachedHead = false
+
+[user]
+	useConfigOnly = true
+
+# Allow local customizations in the .gitconfig_local file
+[include]
+	path = ~/.gitconfig_local
