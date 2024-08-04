@@ -1,8 +1,8 @@
 [alias]
-    s = status
-    au = add -u
+  s = status
+  au = add -u
 	aa = add --all :/
-    c = commit
+  c = commit
 	ci = commit -v
 	ca = commit --amend -v
 	save = commit -a -m "Save"
@@ -37,7 +37,7 @@
 	detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ad%n %C(auto)%d%n"
 
 [push]
-    autoSetupRemote = true
+  autoSetupRemote = true
 
 [grep]
 	lineNumber = true
@@ -46,7 +46,7 @@
 	detachedHead = false
 
 [user]
-	useConfigOnly = true
+  useConfigOnly = true
 
 # Allow local customizations in the .gitconfig_local file
 [include]
