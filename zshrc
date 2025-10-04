@@ -4,6 +4,7 @@
 source "$HOME/.shell/aliases.sh"
 
 source "$HOME/.zsh/plugins.zsh"
+source "$HOME/.zsh/prompt.zsh"
 
 if [ -f "$HOME/.zshrc_local" ]; then
     source "$HOME/.zshrc_local"
