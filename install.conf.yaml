@@ -16,6 +16,8 @@
     ~/.zsh:
     ~/.zshrc:
     ~/.shell:
+    ~/.bashrc:
+    ~/.bash_profile:
 
 - shell:
     - git submodule sync --recursive
