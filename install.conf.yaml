@@ -3,10 +3,19 @@
       create: true
       relink: true
 
-- clean: ["~", "~/.config"]
+# Remove "dead symlinks" under the target deployment directories
+# Where dead symlinks means symlinks into the current dotfile directory where
+# the linked file is gone.
+- clean:
+    ~/:
+    ~/.config:
+        recursive: true
 
 - link:
     ~/.gitconfig:
+    ~/.zsh:
+    ~/.zshrc:
+    ~/.shell:
 
 - shell:
     - git submodule sync --recursive

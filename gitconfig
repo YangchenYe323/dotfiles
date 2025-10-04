@@ -1,8 +1,11 @@
+# !!! This file is managed by dotfiles in VCS
+# Please make your local changes to ~/.gitconfig_local
+
 [alias]
-  s = status
-  au = add -u
+    s = status
+    au = add -u
 	aa = add --all :/
-  c = commit
+    c = commit
 	ci = commit -v
 	ca = commit --amend -v
 	save = commit -a -m "Save"
@@ -15,39 +18,47 @@
 [init]
 	defaultBranch = main
 
-[diff]
-	mnemonicPrefix = true
-	wordRegex = "[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
-	compactionHeuristic = true
-
-[color]
-	ui = auto
-
-[color "grep"]
-	match = cyan bold
-	selected = blue
-	context = normal
-	filename = magenta
-	linenumber = green
-	separator = yellow
-	function = blue
-
-[pretty]
-	line = "%C(auto)%h %<|(60,trunc)%s %C(green)%ad%C(auto)%d"
-	detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ad%n %C(auto)%d%n"
+[commit]
+	# Put the commit diff in the text editor when writing commit messages
+	verbose = true
 
 [push]
-  autoSetupRemote = true
+	# default to push to a remote branch of the same name as the local branch
+	default = simple
+	# ...and create a remote branch if it does not already exist
+    autoSetupRemote = true
+	# push local tags along with any pushes to remote
+	followTags = true
 
-[grep]
-	lineNumber = true
+[fectch]
+	# delete local branches that are deleted in remote
+	prune = true
+	# delete local tags that are deleted in remote
+	pruneTags = true
+	# fetch all remotes
+	all = true
 
-[advice]
-	detachedHead = false
+[branch]
+    sort = -committerdate
 
-[user]
-  useConfigOnly = true
+[tag]
+	sort = version:refname
 
-# Allow local customizations in the .gitconfig_local file
+[diff]
+	colorMoved = plain
+	mnemonicPrefix = true
+	rename = true
+	algorithm = histogram
+
+[rerere]
+	# Record a confict resolution during rebase
+	enabled = true
+	# ...and automatically reapply the resolution on subsequent commits
+	autoupdate = true
+
+[merge]
+	# Show what the block look like before either changes in a merge conflict
+	confictStyle = zdiff3
+
 [include]
 	path = ~/.gitconfig_local
