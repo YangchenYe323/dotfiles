@@ -19,6 +19,7 @@
     ~/.bash:
     ~/.bashrc:
     ~/.bash_profile:
+    ~/.tmux.conf:
 
 - shell:
     - git submodule sync --recursive
