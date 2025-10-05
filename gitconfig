@@ -1,6 +1,9 @@
 # !!! This file is managed by dotfiles in VCS
 # Please make your local changes to ~/.gitconfig_local
 
+[core]
+	excludesFile = ~/.gitignore_global
+
 [alias]
     s = status
     au = add -u
